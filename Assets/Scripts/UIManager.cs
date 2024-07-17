@@ -6,16 +6,17 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Buscar método melhor
-    [SerializeField] private GameObject player;
-    [SerializeField] private TMP_Text bombRadiusT;
-    [SerializeField] private TMP_Text bombCountT;
-    [SerializeField] private TMP_Text playerSpeedT;
+    [SerializeField] private GameObject[] players;
+    [SerializeField] private TMP_Text[] bombRadiusT;
+    [SerializeField] private TMP_Text[] bombCountT;
+    [SerializeField] private TMP_Text[] playerSpeedT;
 
     public void AttPowerUpCount() {
-        bombRadiusT.text = player.GetComponent<BombController>().GetBombRadius().ToString();
-        bombCountT.text = player.GetComponent<BombController>().GetBombAmount().ToString();
-        playerSpeedT.text = (player.GetComponent<MovementControler>().GetSpeed() - 4).ToString();
+        for (int i = 0; i < players.Length; i++) {
+        bombRadiusT[i].text = players[i].GetComponent<BombController>().GetBombRadius().ToString();
+        bombCountT[i].text = players[i].GetComponent<BombController>().GetBombAmount().ToString();
+        playerSpeedT[i].text = (players[i].GetComponent<MovementControler>().GetSpeed() - 4).ToString();
+        }
     }
 
     private void Start() {
