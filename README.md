@@ -1,3 +1,3 @@
-TODO List:\n
-Inimigos Básicos
-Passar de fase: Drop do último inimigo, 3 fases
+TODO List:<br>
+Inimigos Básicos<br>
+Passar de fase: Drop do último inimigo, 3 fases<br>
