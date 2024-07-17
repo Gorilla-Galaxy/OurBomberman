@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
 
     private void Start() {
         ItemPickup.OnOnItemPickup += AttPowerUpCount;
+        GameManager.OnNewRound += UnsubscribeAll;
     }
 
     private void OnEnable() {
@@ -29,5 +30,10 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable() {
         
+    }
+
+    private void UnsubscribeAll() {
+        ItemPickup.OnOnItemPickup -= AttPowerUpCount;
+        GameManager.OnNewRound -= UnsubscribeAll;
     }
 }
